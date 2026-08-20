@@ -1,3 +1,5 @@
 node_modules/\n.env\n*.db\ndist/
 node_modules/
 server/node_modules/
+server/*.db
+server/.vscode/
