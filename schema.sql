@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS questions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question TEXT NOT NULL,
+    date DATE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS responses (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    participant_name TEXT NOT NULL,
+    question_id INTEGER NOT NULL,
+    answer TEXT NOT NULL,
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+CREATE TABLE IF NOT EXISTS donations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    donor_name TEXT NOT NULL,
+    amount REAL NOT NULL,
+    date DATE DEFAULT CURRENT_DATE
+);
